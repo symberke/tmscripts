@@ -6,6 +6,7 @@
 // @author       You
 // @match        sh.st/*
 // @grant        none
+// @downloadurl  https://raw.githubusercontent.com/symberke/tmscripts/master/shortest.js
 // ==/UserScript==
 
 function try_redirect() {
