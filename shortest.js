@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         shorte.st skip
+// @name         shortest 
 // @namespace    http://your.homepage/
 // @version      0.1
 // @description  enter something useful
