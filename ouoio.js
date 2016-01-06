@@ -6,7 +6,7 @@
 // @author       You
 // @match        http://ouo.io/*
 // @grant        none
-// @downloadurl  https://raw.githubusercontent.com/symberke/tmscripts/master/ouoio.js
+// @downloadURL  https://raw.githubusercontent.com/symberke/tmscripts/master/ouoio.js
 // ==/UserScript==
 
 /*
