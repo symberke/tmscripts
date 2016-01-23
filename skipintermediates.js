@@ -8,7 +8,7 @@
 // @match        http://*.netdna-storage.com/step/*
 // @match        http://netdna-storage.com/f/*
 // @grant        none
-// @downloadurl  https://raw.githubusercontent.com/symberke/tmscripts/master/skipintermediates.js
+// @downloadURL  https://raw.githubusercontent.com/symberke/tmscripts/master/skipintermediates.js
 // ==/UserScript==
 
 button = document.getElementsByClassName("download-button");
