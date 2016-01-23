@@ -6,6 +6,7 @@
 // @author       You
 // @match        http://netdna-storage.com/steps/*
 // @match        http://*.netdna-storage.com/step/*
+// @match        http://netdna-storage.com/f/*
 // @grant        none
 // @downloadurl  https://raw.githubusercontent.com/symberke/tmscripts/master/skipintermediates.js
 // ==/UserScript==
