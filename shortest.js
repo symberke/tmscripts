@@ -1,39 +1,38 @@
 // ==UserScript==
-// @name         shortest 
+// @name         shorte.st skip
 // @namespace    http://your.homepage/
 // @version      0.1
 // @description  enter something useful
 // @author       You
 // @match        sh.st/*
 // @grant        none
-// @downloadURL  https://raw.githubusercontent.com/symberke/tmscripts/master/shortest.js
+// @downloadurl  https://raw.githubusercontent.com/symberke/tmscripts/master/shortest.js
 // ==/UserScript==
 
+function go_to_destination(x) {
+    app.advertisementRedirectBlocker.stopBlocking();
+    console.log(x);
+    document.location = x.destinationUrl;
+}
+
 function try_redirect() {
-    // check if the button is visible
-    btn = document.getElementsByClassName("skip-btn")[0]
-    name = btn.className
     
-    if (name.indexOf("show") > 0)
-        app.skipClickNotify.redirectToTargetUrl()
+    req = reqwest({
+        url: "/shortest-url/end-adsession", 
+        method: "post",
+        timeout: 10000, 
+        type: "jsonp", 
+        data: {adSessionId: app.options.adSessionNotifier.sessionId, adbd: 0}, 
+        success: go_to_destination
+    });
+    
+    console.log(req);
 }
 
 setInterval(try_redirect, 1000);
 
-//oldSetInterval = setInterval;
-
-//setInterval = function(a,b) { oldSetInterval(a,b/1e3) };
-
-// app = {};
+app.intermediatePage.adsBlockerDetected = false;
 
 app.window.isVisible = function() { return true; }
-
-/*
-app.countdown.init2 = app.init;
-app.countdown.init = function (a, b, c) { app.init2(a,b,c) };
-
-app.countdown.start2 = app.countdown.start;
-app.countdown.start = function () { app.countdown.start2() };
-*/
 
 app.countdown.start()
