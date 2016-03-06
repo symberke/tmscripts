@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skip intermediates
 // @namespace    http://your.homepage/
-// @version      0.2
+// @version      0.3
 // @description  enter something useful
 // @author       You
 // @match        http://netdna-storage.com/steps/*
@@ -19,7 +19,8 @@ if (button.length > 0) {
     
     if (matches)
         document.location = matches[1];
-    else button[0].click();
+    // else button[0].click();
+    else document.location.href = button[0].href;
 }
 
 
@@ -32,5 +33,6 @@ if (button.length > 0) {
     
     if (matches)
         document.location = matches[1];
-    else button[0].click();
+    // else button[0].click();
+    else document.location.href = button[0].href;
 }
