@@ -5,6 +5,7 @@
 // @description  enter something useful
 // @author       You
 // @match        http://ouo.io/*
+// @match        http://ouo.press/*
 // @grant        none
 // @downloadURL  https://raw.githubusercontent.com/symberke/tmscripts/master/ouoio.js
 // ==/UserScript==
