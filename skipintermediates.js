@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         skip intermediates
 // @namespace    http://your.homepage/
-// @version      0.4
+// @version      0.5
 // @description  enter something useful
 // @author       You
 // @match        http://netdna-storage.com/steps/*
@@ -86,42 +86,45 @@ window.addEventListener('beforescriptexecute', function(e) {
 // tgh = new TryGetHref();
 // tgh.start();
 
-setInterval( function () {
+var check_btns = function() {
+    var n_times = 0;
+    
+    return function() {
+        n_times++;
+        
+        if (n_times > 5) return;
 
-    button1 = document.getElementsByClassName("download-button");
+        button1 = document.getElementsByClassName("download-button");
 
-    console.log(button1);
+//         console.log(button1);
 
-    if (button1.length > 0) {
-        url = button1[0].href;
-        matches = url.match(/=(.*)/)
+        if (button1.length > 0) {
+            url = button1[0].href;
+            matches = url.match(/=(.*)/);
 
-        if (matches)
-            document.location = matches[1];
-        else document.location.href = button1[0].href;
+            if (matches)
+                document.location = matches[1];
+            else document.location.href = button1[0].href;
+        }
+
+        button2 = document.getElementsByClassName("btn");
+
+        if (button2.length > 0) {
+            url = button2[0].href;
+            matches = url.match(/=(.*)/);
+
+            if (matches)
+                document.location = matches[1];
+            // else button[0].click();
+            else document.location.href = url;
+        }
+
+        locked_buttons = document.getElementsByClassName("button locked");
+        if (locked_buttons) {
+            b = locked_buttons[0];
+            b.href = b.getAttribute("data-href");
+        }
     }
+}
 
-    console.log("here");
-
-    button2 = document.getElementsByClassName("btn");
-
-    console.log(button2)
-    console.log(button2.length);
-
-    if (button2) {
-        url = button2[0].href;
-        matches = url.match(/=(.*)/)
-
-        console.log("here2");
-
-        if (matches)
-            document.location = matches[1];
-        // else button[0].click();
-        else document.location.href = url;
-    }
-
-    // locked_buttons = document.getElementsByClassName("button locked");
-    // if (locked_buttons.length == 1) {
-    //     document.location = locked_buttons[0].getAttribute("data-href");
-    // }
-}, 1000);
+setInterval(check_btns(), 1000);
