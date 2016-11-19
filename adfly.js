@@ -6,6 +6,7 @@
 // @author       You
 // @match        http://adf.ly/*
 // @grant        none
+// @downloadurl  https://raw.githubusercontent.com/symberke/tmscripts/master/adfly.js
 // ==/UserScript==
 
 var check_button = (function() {
