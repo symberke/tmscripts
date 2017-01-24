@@ -24,5 +24,5 @@ if (btn.length > 0) {
 
 (function() {
     btn = document.getElementsByClassName("btn");
-    if (btn.length > 0) setTimeout( function() { btn[0].click() }, Math.round(500*Math.random() + 250));
+    if (btn.length > 0) setInterval( function() { btn[0].click() }, Math.round(500*Math.random() + 250));
 })();
