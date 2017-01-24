@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ouo.io skip attempt
 // @namespace    http://your.homepage/
-// @version      0.2
+// @version      0.3
 // @description  enter something useful
 // @author       You
 // @match        http://ouo.io/*
